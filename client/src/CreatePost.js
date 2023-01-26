@@ -1,10 +1,14 @@
 import {Button} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
-import Images from './image'
+import Images from './image';
+import MaterialsPost from "./form";
+import {useState} from "react";
+
 
 
 function CreatePost() {
     const navigate = useNavigate();
+    
     
 
     return (
@@ -12,6 +16,13 @@ function CreatePost() {
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Your shelf</h1>
                <Images />
+               {/* <materialsSchema /> */}
+            <Button 
+                variant="outline-dark"
+                onClick={() => navigate ("#")}> Create New Material </Button>
+                <MaterialsPost />
+
+
 
             <Button
             style={{width:"100%"}} 

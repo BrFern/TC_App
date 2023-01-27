@@ -57,7 +57,16 @@ app.get("/posts", (req,res) => {
     Post.find()
     .then(items => res.json(items))
     .catch((err) => console.log(err));
+
+ 
 } ) 
+
+//Delete functionality
+app.delete("/delete/:id", (req, res) => {
+   Post.findByIdAndDelete({_id: req.params.id})
+   .then((doc) => console.log(doc))
+   .catch((err) => console.log(err))
+})
 
 app.listen(3001, function() {
     console.log("Server is running")

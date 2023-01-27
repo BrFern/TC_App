@@ -12,8 +12,12 @@ app.use(cors());
 
 //Connecting to database
 mongoose
-.connect("mongodb://localhost:27017/myDB")
-.catch((err) => console.log(err));
+.set('strictQuery', true)
+.connect("mongodb+srv://BaileyFern:testing123@sei.tz0cct9.mongodb.net/?retryWrites=true&w=majority")
+.catch((err) => console.log(err))
+
+
+// mongodb://localhost:27017/myDB --> video way of connecting
 
 //Database Schema and model
 const materialsSchema = mongoose.Schema ({

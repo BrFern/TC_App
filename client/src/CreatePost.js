@@ -24,8 +24,8 @@ function CreatePost() {
         });
     };
 
-    const createPost = (e) => {
-        e.preventDefault();
+    const handleClick = (event) => {
+        event.preventDefault();
 
         axios
         .post("/create", post)
@@ -34,12 +34,7 @@ function CreatePost() {
 
 
     }
-    const handleClick = (event) => {
-        event.preventDefault();
-        console.log(post)
-
-    
-    }
+   
     
 
     return (

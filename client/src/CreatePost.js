@@ -1,11 +1,10 @@
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
 import Images from './image';
-import MaterialsPost from "./form";
+// import MaterialsPost from "./form";
 import {useState} from "react";
 import axios from "axios";
-import post from './form';
-import navigate from './form';
+
 
 function CreatePost() {
     const navigate = useNavigate();

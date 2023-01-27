@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {Modal} from "react-bootstrap";
 
 
+
 function Posts () {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
@@ -59,9 +60,8 @@ function Posts () {
 
     return(
         <div style={{width:"90%", textAlign:"center", margin: "auto auto"}}>
-            <h1>Posts page</h1>
+            <h1>Material Creation page!</h1> 
             <Button style= {{width: "100%", marginBottom:"1rem"}} variant="outline-dark" onClick={() => navigate(-1)}> Back </Button>
-
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Update material</Modal.Title>
@@ -89,7 +89,6 @@ function Posts () {
                 placeholder ="Description"
                 onChange={handleChange}/>
 
-                
             </Form.Group>
         </Form>
     </Modal.Body>
@@ -102,7 +101,7 @@ function Posts () {
           </Button>
     </Modal.Footer>
     </Modal>
-
+   
             {posts ? (
                 <>
                    {posts.map(post => {

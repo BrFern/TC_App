@@ -1,6 +1,6 @@
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
-import Images from './image';
+// import Images from './image';
 // import MaterialsPost from "./form";
 import {useState} from "react";
 import axios from "axios";
@@ -41,7 +41,7 @@ function CreatePost() {
         <div style={{width:"90%", margin: "auto auto",textAlign:"center" }}>
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Your shelf</h1>
-               <Images />
+               {/* <Images /> */}
                 
                 <h1> Make a new material below! </h1>
             <Form>

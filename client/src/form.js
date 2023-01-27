@@ -28,7 +28,7 @@ function MaterialsPost () {
 
     useEffect(() => {
         console.log(post)
-    ;}, [post]);
+    })
 
     return (
         <div>

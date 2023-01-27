@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {Button} from "react-bootstrap";
+
 
 function Posts () {
     const [posts, setPosts] = useState([]);
@@ -20,8 +22,25 @@ function Posts () {
                 <>
                    {posts.map(post => {
                     return (
-                        <div>
-                            <h4>{post.name}</h4>
+                        <div style= {{
+                            border: "solid lightgray 1px",
+                            borderRadius: "8px",
+                            marginBottom:"1rem",
+                            padding: "1 rem",  }}>
+                            <h4>{post.image}</h4>
+                            <p> {post.name}</p>
+                            <p> {post.description}</p>
+                            <div style={{
+                                display: "flex", 
+                                flexDirection: "row", 
+                                justifyContent: "space-between",
+                        }}>
+                            <Button variant="outline-info" style = {{
+                                width: "100%",
+                                marginRight: "1rem"
+                            }}> Update </Button>
+                            <Button variant="outline-danger" style = {{width: "100%",}}> Delete</Button>
+                            </div>
                         </div>
                     )
                    })} 

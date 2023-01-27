@@ -48,9 +48,16 @@ app.post("/create", (req,res) => {
         image: req.body.image,
         name: req.body.name,
         description: req.body.description,
-    }).then(doc => console.log(doc))
+    })
+    .then(doc => console.log(doc))
     .catch(err => console.log(err));
 })
+
+app.get("/posts", (req,res) => {
+    Post.find()
+    .then(items => res.json(items))
+    .catch((err) => console.log(err));
+} ) 
 
 app.listen(3001, function() {
     console.log("Server is running")

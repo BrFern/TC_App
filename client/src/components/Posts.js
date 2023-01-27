@@ -1,12 +1,19 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Button} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import {Modal} from "react-bootstrap";
 
 
 function Posts () {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
+    const [updatedPost, setUpdatedPost] = useState({})
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
     axios
@@ -25,10 +32,76 @@ function Posts () {
 
         window.location.reload(); 
     }
+    const updatePost = (post) => {
+        setUpdatedPost(post);
+        handleShow();
+    };
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setUpdatedPost(prev => {
+            return({
+                ...prev,
+                [name] : value,
+            })
+        })
+    }
+
+    const saveUpdatedPost = () => {
+        axios.put(`/update/${updatedPost._id}`, updatedPost)
+        .then(res => console.log (res))
+        .catch((err) => console.log(err));
+
+        handleClose();
+        window.location.reload();
+    }
+
     return(
         <div style={{width:"90%", textAlign:"center", margin: "auto auto"}}>
             <h1>Posts page</h1>
             <Button style= {{width: "100%", marginBottom:"1rem"}} variant="outline-dark" onClick={() => navigate(-1)}> Back </Button>
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Update material</Modal.Title>
+        </Modal.Header>
+    <Modal.Body>
+        <Form>
+            <Form.Group>
+                <Form.Control 
+                style={{marginBottom: "1rem"}} 
+                placeholder="Image" 
+                name="image"
+                value={updatedPost.image ? updatedPost.image: "" }
+                onChange={handleChange}
+                />
+                <Form.Control 
+                style={{marginBottom: "1rem"}} 
+                name="name"
+                value={updatedPost.name ? updatedPost.name: "" }
+                placeholder="Name" 
+                onChange={handleChange}/>
+                <Form.Control 
+                style={{marginBottom: "1rem"}} 
+                name="description"
+                value={updatedPost.description ? updatedPost.description: "" }
+                placeholder ="Description"
+                onChange={handleChange}/>
+
+                
+            </Form.Group>
+        </Form>
+    </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={saveUpdatedPost}>
+            Save Changes
+          </Button>
+    </Modal.Footer>
+    </Modal>
 
             {posts ? (
                 <>
@@ -49,7 +122,10 @@ function Posts () {
                                 flexDirection: "row", 
                                 justifyContent: "space-between",
                         }}>
-                            <Button variant="outline-info" style = {{width: "100%", marginRight: "1rem"}}>
+                            <Button 
+                            variant="outline-info" 
+                            onClick={() => updatePost(post)}
+                            style = {{width: "100%", marginRight: "1rem"}}>
                                  Update 
                                  </Button>
                             <Button onClick={() => deletePost(post._id)} variant="outline-danger" style = {{width: "100%",}}> Delete</Button>

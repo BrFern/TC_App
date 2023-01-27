@@ -68,6 +68,15 @@ app.delete("/delete/:id", (req, res) => {
    .catch((err) => console.log(err))
 })
 
+app.put("/update/:id", (req, res) => {
+    Post.findByIdAndUpdate({_id: req.params.id}, {
+       image: req.body.image,
+       name: req.body.name,
+       description: req.body.desciption
+    }).then(doc => console.log(doc))
+    .catch(err => console.log(err)) 
+})
+
 app.listen(3001, function() {
     console.log("Server is running")
 } );

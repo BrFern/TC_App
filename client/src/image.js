@@ -1,12 +1,12 @@
 import React from 'react';
-import shelfImage from './images/side_table.png'
+import shelfImage from './images/side_table.png';
 
-function Image() {
+function Images() {
     return (
         <div>
-            <img src ={shelfImage} alt="" />
+            <img src ={shelfImage} alt="Shelf" />
         </div>
     )
 }
 
-export default Image;
+export default Images;

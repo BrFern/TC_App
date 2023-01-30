@@ -1,9 +1,9 @@
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
-// import Images from './image';
-// import MaterialsPost from "./form";
 import {useState} from "react";
 import axios from "axios";
+
+
 
 
 function CreatePost() {
@@ -34,6 +34,21 @@ function CreatePost() {
 
         navigate("posts")
     }
+
+
+    // This is from the form submission
+    // const submitForm = () => {
+    //     const formData = new FormData();
+    //     formData.append("name", name);
+    //     formData.append("file", selectedFile);
+
+    // axios
+    // .post(UPLOAD_URL, formData)
+    // .then ((res) => {
+    //     alert("File upload success");
+    // })
+    // .catch((err) => alert("File upload error"));
+    // }
    
     
 
@@ -41,17 +56,16 @@ function CreatePost() {
         <div style={{width:"90%", margin: "auto auto",textAlign:"center" }}>
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Your shelf</h1>
-               {/* <Images /> */}
-                
                 <h1> Make a new material below! </h1>
+                
             <Form>
                 <Form.Group>
                     <Form.Control 
                     name="image" 
                     value={post.image}
-                    placeholder="Image" 
+                    input type = "file"
                     style = {{marginBottom: "1rem"}}
-                    onChange = {handleChange} />
+                    onChange = {handleChange}/>
                     
                     <Form.Control 
                     name="name"

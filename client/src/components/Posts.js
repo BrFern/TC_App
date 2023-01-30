@@ -3,6 +3,8 @@ import axios from "axios";
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {Modal} from "react-bootstrap";
+// import {Image} from "../image";
+// import {FileUploader} from "../components/FileUploader";
 
 
 
@@ -61,12 +63,16 @@ function Posts () {
     return(
         <div style={{width:"90%", textAlign:"center", margin: "auto auto"}}>
             <h1>Material Creation page!</h1> 
+            
+            {/* <FileUploader 
+            onFileSelectSuccess = {(file) => setSelectedFile(file)}
+            onFileSelectError = {({error}) => alert(error)}/> */}
             <Button style= {{width: "100%", marginBottom:"1rem"}} variant="outline-dark" onClick={() => navigate(-1)}> Back </Button>
-    <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Update material</Modal.Title>
         </Modal.Header>
-    <Modal.Body>
+        <Modal.Body>
         <Form>
             <Form.Group>
                 <Form.Control 
@@ -76,6 +82,7 @@ function Posts () {
                 value={updatedPost.image ? updatedPost.image: "" }
                 onChange={handleChange}
                 />
+              
                 <Form.Control 
                 style={{marginBottom: "1rem"}} 
                 name="name"

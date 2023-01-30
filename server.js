@@ -21,9 +21,9 @@ mongoose
 
 //Database Schema and model
 const materialsSchema = mongoose.Schema ({
-    img: { 
+    image: { 
         type: String,
-        require: true
+        selectedFile: String,
     },
     name: {
         type: String,
@@ -55,7 +55,7 @@ app.post("/create", (req,res) => {
 
 app.get("/posts", (req,res) => {
     Post.find()
-    .then(items => res.json(items))
+    .then((items) => res.json(items))
     .catch((err) => console.log(err));
 
  

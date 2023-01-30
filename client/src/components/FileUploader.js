@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
+
  function UploadImages() {
     const [images, setImages] = useState([]);
     const [imageURLs, setImageURLs] = useState([]);
@@ -10,14 +11,17 @@ import React, {useState, useEffect} from 'react';
         images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
         setImageURLs(newImageUrls);
     }})
-
+    console.log(imageURLs);
     function onImageChange(e) {
         setImages([...e.target.files]);
     }
     return (
         <>
-            <input type="file" multiple accept="image/*" onChange = {onImageChange} />
-            {imageURLs.map(imageSrc => <img src= {imageSrc} />)}
+            <input type="file" multiple accept="image/*" onChange = {onImageChange}  />
+            {imageURLs.map((imageSrc) => {
+            <img src= {imageSrc} />
+            })}
+            
         </>
     )
 }

@@ -3,11 +3,8 @@ import axios from "axios";
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {Modal} from "react-bootstrap";
-import Images from "../image";
-
-
-
-
+import Shelf from "./Shelf";
+import UploadImages from "./FileUploader";
 
 function Posts () {
     const navigate = useNavigate();
@@ -23,7 +20,7 @@ function Posts () {
     axios
         .get("/posts")
         .then((res) => {
-        console.log(res)
+        console.log(res.data)
         setPosts(res.data);
     })
         .catch(err => console.log(err));
@@ -64,7 +61,7 @@ function Posts () {
     return(
         <div style={{width:"90%", textAlign:"center", margin: "auto auto"}}>
             <h1>Material Creation page! </h1> 
-           <h2> <Images /></h2>
+           <h2> <Shelf/></h2>
           
             <Button style= {{width: "100%", marginBottom:"1rem"}} variant="outline-dark" onClick={() => navigate(-1)}> Back </Button>
         <Modal show={show} onHide={handleClose}>
@@ -74,13 +71,7 @@ function Posts () {
         <Modal.Body>
         <Form>
             <Form.Group>
-                <Form.Control 
-                style={{marginBottom: "1rem"}} 
-                placeholder="Image" 
-                name="image"
-                value={updatedPost.image ? updatedPost.image: "" }
-                onChange={handleChange}
-                />
+                <UploadImages />
                 <Form.Control 
                 style={{marginBottom: "1rem"}} 
                 name="name"
@@ -117,7 +108,7 @@ function Posts () {
                             borderRadius: "8px",
                             marginBottom:"1rem",
                             padding: "1 rem",  }}>
-                            <h4>{post.image}</h4>
+                            <p>{post.image}</p>
                             <p> {post.name}</p>
                             <p> {post.description}</p>
                             <div style={{

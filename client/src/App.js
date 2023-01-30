@@ -8,6 +8,7 @@ function App() {
 
   return (
     <div style ={{width: "90%", margin:"auto auto", textAlign: "center"}}>
+    
       <h1> Login Page</h1>
       <Form>
         <Form.Group>

@@ -49,16 +49,7 @@ function CreatePost() {
                
             <Form>
                 <Form.Group>
-        
-                    <Form.Control 
-                    name="image" 
-                    value={post.image}
-                    style = {{marginBottom: "1rem"}}
-                    onChange = {handleChange}
-                    />
-
                     <UploadImages />
-                    
                     <Form.Control 
                     name="name"
                     value={post.name}

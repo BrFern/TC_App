@@ -1,22 +1,25 @@
-// import React, {useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 
-// const FileUploader = ({onFileSelect}) => {
-//     const fileInput = useRef(null)
+ function UploadImages() {
+    const [images, setImages] = useState([]);
+    const [imageURLs, setImageURLs] = useState([]);
 
-//     const handleFileInput = (e) => {
-//         //handle validations
-//         const file = e.target.files [0];
-//         if(file.size > 1024)
-//             onFileSelectError({error: "File size cannot exceed more than 1MB"});
-//         else onFileSelectSuccess(file)
+    useEffect (() => {{
+        if (images.length <1) return;
+        const newImageUrls = [];
+        images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
+        setImageURLs(newImageUrls);
+    }})
 
-//     }
-//     return (
-//         <div className="file-uploader">
-//             <input type="file" onChange={handleFileInput} />
-//             <button onClick={e => fileInput.current && fileInput.current.click()} className="btn btn-primary" />
-//         </div>
-//     )
-// }
+    function onImageChange(e) {
+        setImages([...e.target.files]);
+    }
+    return (
+        <>
+            <input type="file" multiple accept="image/*" onChange = {onImageChange} />
+            {imageURLs.map(imageSrc => <img src= {imageSrc} />)}
+        </>
+    )
+}
 
-// export default FileUploader;
+export default UploadImages;

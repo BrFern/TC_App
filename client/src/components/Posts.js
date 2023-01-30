@@ -3,8 +3,9 @@ import axios from "axios";
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 import {Modal} from "react-bootstrap";
-// import {Image} from "../image";
-// import {FileUploader} from "../components/FileUploader";
+import Images from "../image";
+
+
 
 
 
@@ -62,11 +63,9 @@ function Posts () {
 
     return(
         <div style={{width:"90%", textAlign:"center", margin: "auto auto"}}>
-            <h1>Material Creation page!</h1> 
-            
-            {/* <FileUploader 
-            onFileSelectSuccess = {(file) => setSelectedFile(file)}
-            onFileSelectError = {({error}) => alert(error)}/> */}
+            <h1>Material Creation page! </h1> 
+           <h2> <Images /></h2>
+          
             <Button style= {{width: "100%", marginBottom:"1rem"}} variant="outline-dark" onClick={() => navigate(-1)}> Back </Button>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -82,7 +81,6 @@ function Posts () {
                 value={updatedPost.image ? updatedPost.image: "" }
                 onChange={handleChange}
                 />
-              
                 <Form.Control 
                 style={{marginBottom: "1rem"}} 
                 name="name"
@@ -95,7 +93,6 @@ function Posts () {
                 value={updatedPost.description ? updatedPost.description: "" }
                 placeholder ="Description"
                 onChange={handleChange}/>
-
             </Form.Group>
         </Form>
     </Modal.Body>
@@ -108,7 +105,7 @@ function Posts () {
           </Button>
     </Modal.Footer>
     </Modal>
-   
+    
             {posts ? (
                 <>
                    {posts.map(post => {

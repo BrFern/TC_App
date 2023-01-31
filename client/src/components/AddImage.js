@@ -5,7 +5,7 @@ async function handleSubmit(e) {
       if (image) {
         const formData = new FormData();
         formData.append("file", image);
-        formData.append("Teacher_class_app", "presetName");
+        formData.append("upload_preset", "Teacher_class_app");
         const dataRes = await axios.post(
           "cloudinary://386482126368168:9nE0OBIUr0eFQ9LBHz9X4miTXMg@dcja8kinx",
           formData

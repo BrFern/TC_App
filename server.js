@@ -27,10 +27,7 @@ mongoose
 
 //Database Schema and model
 const materialsSchema = mongoose.Schema ({
-    image: {
-        type: String,
-        
-    },
+    selectedFile: String,
     name: {
         type: String,
         require: true

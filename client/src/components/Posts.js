@@ -71,7 +71,14 @@ function Posts () {
         <Modal.Body>
         <Form>
             <Form.Group>
-                <UploadImages />
+                {/* <UploadImages /> */}
+                <Form.Control 
+                    name="image"
+                    value={updatedPost.image ? updatedPost.image: ""}
+                    type="file"
+                    placeholder = "Image"
+                    style = {{marginBottom: "1rem"}} 
+                    onChange = {handleChange}/>
                 <Form.Control 
                 style={{marginBottom: "1rem"}} 
                 name="name"

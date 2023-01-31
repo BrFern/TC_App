@@ -1,13 +1,14 @@
 // import './App.css';
 import {Button, Form} from "react-bootstrap";
 import {navigate, useNavigate} from "react-router-dom";
+import background from "./images/backgroundMonte.jpg";
 
 
 function App() {
   const navigate = useNavigate();
 
   return (
-    <div style ={{width: "90%", margin:"auto auto", textAlign: "center"}}>
+    <div style ={{width: "90%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin:"auto auto", textAlign: "center", backgroundImage: `url(${background}`}}>
     
       <h1> Login Page</h1>
       <Form>

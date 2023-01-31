@@ -4,6 +4,7 @@ import {useState} from "react";
 import axios from "axios";
 // import CardDisplay from "./components/Cards";
 import UploadImages from "./components/FileUploader";
+import shelf from "./images/side_table.png";
 
 
 
@@ -37,7 +38,7 @@ function CreatePost() {
     }
 
     return (
-        <div style={{width:"90%", margin: "auto auto",textAlign:"center" }}>
+        <div style={{width:"90%", width: "90%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin: "auto auto",textAlign:"center", backgroundImage: `url(${shelf}`, backgroundRepeat: "no-repeat" }}>
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Your shelf</h1>
                 <h1> Make a new material below! </h1>

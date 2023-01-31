@@ -1,9 +1,9 @@
 const {default: mongoose} = require ('mongoose');
 
 const materialsSchema = new mongoose.Schema ({
-    img: { 
-        type: File,
-        require: true
+    image: { 
+        type: String,
+        
     },
     name: {
         type: String,

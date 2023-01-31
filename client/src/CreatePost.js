@@ -36,20 +36,22 @@ function CreatePost() {
         navigate("posts")
     }
 
-
-
-   
-    
-
     return (
         <div style={{width:"90%", margin: "auto auto",textAlign:"center" }}>
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Your shelf</h1>
                 <h1> Make a new material below! </h1>
-               
             <Form>
                 <Form.Group>
-                    <UploadImages />
+                    <Form.Control 
+                    name="image"
+                    value={post.image}
+                    type="file"
+                    placeholder = "Image"
+                    style = {{marginBottom: "1rem"}} 
+                    onChange = {handleChange}/>
+                
+                    {/* <UploadImages /> */}
                     <Form.Control 
                     name="name"
                     value={post.name}

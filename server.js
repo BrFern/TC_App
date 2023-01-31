@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+
+
 const app = express();
 
 //Middleware
@@ -18,6 +20,10 @@ mongoose
 
 
 // mongodb://localhost:27017/myDB --> video way of connecting
+
+
+
+
 
 //Database Schema and model
 const materialsSchema = mongoose.Schema ({

@@ -85,14 +85,19 @@ function Posts() {
         <Modal.Body>
           <Form>
             <Form.Group>
-              <Form.Control
+            <FileBase
+               type = "file"
+               multiple={false}
+               onDone={({base64}) => setUpdatedPost({ ... updatedPost, selectedFile: base64})}
+               />
+              {/* <Form.Control
                 style={{ marginBottom: "1rem" }}
                 type="file"
                 multiple={false}
                 onDone={({ base64 }) =>
                   setUpdatedPost({ ...updatedPost, selectedFile: base64 })
                 }
-              />
+              /> */}
 
               <Form.Control
                 style={{ marginBottom: "1rem" }}

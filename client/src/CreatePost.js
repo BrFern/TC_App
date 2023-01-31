@@ -2,9 +2,7 @@ import {Button, Form} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
 import {useState} from "react";
 import axios from "axios";
-// import CardDisplay from "./components/Cards";
-// import UploadImages from "./components/FileUploader";
-import shelf from "./images/side_table.png";
+import Shelf from "./components/Shelf";
 import FileBase from 'react-file-base64';
 
 
@@ -39,15 +37,12 @@ function CreatePost() {
     }
 
     return (
-        <div style={{width:"90%", width: "90%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin: "auto auto",textAlign:"center", backgroundImage: `url(${shelf}`, backgroundRepeat: "no-repeat" }}>
+        <div style={{ width: "50%", textAlign: "center", margin: "auto auto" }}>
+        
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
-            <h1>Your shelf</h1>
-                <h1> Make a new material below! </h1>
+            <h1>Create a new material below!</h1>
+                <Shelf />
             <Form>
-                {/* <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label> Input Image</Form.Label>
-                    <Form.Control type="file" />
-                </Form.Group> */}
                 <Form.Group>
             <FileBase
                type = "file"
@@ -75,11 +70,11 @@ function CreatePost() {
                 variant="outline-success"
                 onClick={(handleClick)}
                 style= {{marginBottom:"1rem"}}> Create New Material </Button>
+
             <Button
             style={{width:"100%"}} 
             variant="outline-dark"
             onClick= {() => navigate (-1)}> Back </Button> 
-            {/* Button to navigate back to previous page */}
         </div>
     )
 }

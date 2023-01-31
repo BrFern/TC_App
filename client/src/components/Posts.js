@@ -62,7 +62,7 @@ function Posts() {
   console.log(updatedPost._id);
 
   return (
-    <div style={{ width: "90%", textAlign: "center", margin: "auto auto" }}>
+    <div style={{ width: "50%", textAlign: "center", margin: "auto auto" }}>
       <h1>Material Creation page! </h1>
       <h2>
         {" "}
@@ -90,15 +90,7 @@ function Posts() {
                multiple={false}
                onDone={({base64}) => setUpdatedPost({ ... updatedPost, selectedFile: base64})}
                />
-              {/* <Form.Control
-                style={{ marginBottom: "1rem" }}
-                type="file"
-                multiple={false}
-                onDone={({ base64 }) =>
-                  setUpdatedPost({ ...updatedPost, selectedFile: base64 })
-                }
-              /> */}
-
+        
               <Form.Control
                 style={{ marginBottom: "1rem" }}
                 name="name"

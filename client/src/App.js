@@ -8,7 +8,7 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <div style ={{width: "90%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin:"auto auto", textAlign: "center", backgroundImage: `url(${background}`}}>
+    <div style ={{width: "50%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin:"auto auto", textAlign: "center", backgroundImage: `url(${background}`}}>
     
       <h1> Login Page</h1>
       <Form>

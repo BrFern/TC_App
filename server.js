@@ -1,14 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 
 
 const app = express();
 
 //Middleware
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+// app.use(express.json());
+// app.use(express.urlencoded({extended: false}));
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
+
 app.use(cors());
 
 
@@ -48,7 +52,7 @@ app.get("/", (req,res) => {
 
 app.post("/create", (req,res) => {
     Post.create ({
-        image: req.body.image,
+        selectedFile: req.body.selectedFile,
         name: req.body.name,
         description: req.body.description,
     })
@@ -73,7 +77,7 @@ app.delete("/delete/:id", (req, res) => {
 
 app.put("/update/:id", (req, res) => {
     Post.findByIdAndUpdate({_id: req.params.id}, {
-       image: req.body.image,
+       selectedFile: req.body.selectedFile,
        name: req.body.name,
        description: req.body.desciption
     }).then(doc => console.log(doc))

@@ -44,7 +44,7 @@ function Posts() {
 
   const deletePost = (id) => {
     axios
-      .delete(`https://teacher-app.onrender.com/delete/${id}`)
+      .delete(`https://teacher-app.onrender.com/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
@@ -66,7 +66,7 @@ function Posts() {
 
   const saveUpdatedPost = () => {
     axios
-      .put(`https://teacher-app.onrender.com/update/${updatedPost._id}`, updatedPost)
+      .put(`https://teacher-app.onrender.com/${updatedPost._id}`, updatedPost)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 

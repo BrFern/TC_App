@@ -72,9 +72,7 @@ function CreatePost() {
                 variant="outline-success"
                 onClick={(handleClick)}
                 style= {{marginBottom:"1rem"}}> Create New Material </Button>
-    
-
-
+                
             <Button
             style={{width:"100%"}} 
             variant="outline-dark"

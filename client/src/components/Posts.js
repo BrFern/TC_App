@@ -30,6 +30,8 @@ function Posts() {
       .catch((err) => console.log(err));
   }, []);
 
+
+  //Delete
   const deletePost = (id) => {
     axios
       .delete(`/delete/${id}`)
@@ -38,6 +40,9 @@ function Posts() {
 
     window.location.reload();
   };
+
+//Update
+
   const updatePost = (post) => {
     setUpdatedPost(post);
     handleShow();

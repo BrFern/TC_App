@@ -1,22 +1,18 @@
 # TC_App
 
-
-​
 # Introduction
 
 In this application, I wanted to make it easier for Montessori teachers to 
 visualize their materials on the shelf. I thought this would ease the access
-for the Montesssori 
+for the Montesssori community. 
+
+Login page: 
+<img width="500" alt="Functionality" src = "">
+
+Materials page:
 
 
 
-
-
-​
-​
-
-
-​
 # Author & Contributor List
 Bailey Fern
 
@@ -27,11 +23,15 @@ Nhan Khang Le
 Ying Wang
 ​
 Natalia Kostka
+
+Will Spina
 ​
----
+
 ​
 # Technologies Used
+
 Technologies:
+
 VSCode, MongoDB, HTML5, CSS3, Javascript
 ​
 Libraries:
@@ -43,27 +43,27 @@ Bootstrap, Node.js, Express.js
 APIs:
 Axios, CORS
 ​
----
+
 ​
-Getting Started
---- 
-The project was planned on a [Trello Board](https://trello.com/b/zqqBSEoa/wishbone-mern-app) and available on [Render](www.google.com).
+# Getting Started
+
+The project was planned on a Trello board: https://trello.com/b/eJo3TQyu/mern-app-planning
+
+
+# Unsolved Problems
+ Getting the materials on the shelf
+ Making a database with accessible images
+ Being able to click on the image
 ​
----
 ​
-Unsolved Problems
----
-Form alignment reorganization of active versus inactive dogs.
-​
-All other known bugs and fixes can be sent to [cyn.uruk@gmail.com](cyn.uruk@gmail.com).
-​
----
-​
-Future Enhancements
----
-1. Listing a calendar or automate updates of upcoming Meet and Greet events. 
-2. A wishlist supply request for each active dog emailed to the rescue director.
-3. User authentication on the Login page.
-4. User logout on the Create Profile and All Dogs List page.
+# Future Enhancements
+
+1. Putting the materials on the shelf
+2. Authorization
+3. Multiple shelves
+4. Materials from everywhere
+
+
+
 ​
 

@@ -34,7 +34,7 @@ function Posts() {
 
   useEffect(() => {
     axios
-      .get("/posts")
+      .get("https://teacher-app.onrender.com/posts")
       .then((res) => {
         console.log(res.data);
         setPosts(res.data);
@@ -44,7 +44,7 @@ function Posts() {
 
   const deletePost = (id) => {
     axios
-      .delete(`/delete/${id}`)
+      .delete(`https://teacher-app.onrender.com/delete/${id}`)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
@@ -66,7 +66,7 @@ function Posts() {
 
   const saveUpdatedPost = () => {
     axios
-      .put(`/update/${updatedPost._id}`, updatedPost)
+      .put(`https://teacher-app.onrender.com/update/${updatedPost._id}`, updatedPost)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 

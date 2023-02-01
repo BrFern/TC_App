@@ -17,7 +17,7 @@ async function handleSubmit(e) {
         image: imageUrl,
       };
       console.log(selectedCommunity);
-      await axios.post("http://localhost:3001/store-image", submitPost);
+      await axios.post("https://teacher-app.onrender.com/store-image", submitPost);
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }

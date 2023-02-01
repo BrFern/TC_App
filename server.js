@@ -25,7 +25,7 @@ mongoose
 .catch((err) => console.log(err))
 
 
-// mongodb://localhost:27017/myDB --> video way of connecting
+
 
 
 

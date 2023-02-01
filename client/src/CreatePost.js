@@ -30,7 +30,7 @@ function CreatePost() {
         event.preventDefault();
 
         axios
-        .post("/create", post)
+        .post("https://teacher-app.onrender.com/create", post)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
 

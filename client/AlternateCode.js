@@ -36,7 +36,7 @@ function Posts() {
     axios
       .get("/posts")
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         setPosts(res.data);
       })
       .catch((err) => console.log(err));
@@ -235,8 +235,6 @@ function Posts() {
                     onClick={() => updatePost(post)}
                     style={{ width: "25%", marginRight: "1rem" }}
                   >
-                    {" "}
-                    {/* outline-info */}
                     UPDATE
                   </Button>
                   <Button

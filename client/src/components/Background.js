@@ -1,10 +1,10 @@
 import React from 'react';
-import backgroundImage from "../images/backgroundMonte.jpg"
+import classroomImage from "../images/ClassroomImage.png"
 
 function Background () {
     return (
         <div>
-            <img src={backgroundImage}alt="Shelf" />
+            <img src={classroomImage} alt="Classroom Image" />
         </div>
     )
 }

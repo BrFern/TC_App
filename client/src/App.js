@@ -1,27 +1,34 @@
 // import './App.css';
 import {Button, Form} from "react-bootstrap";
 import {navigate, useNavigate} from "react-router-dom";
-import background from "./images/backgroundMonte.jpg";
+import Background from "./components/Background";
+
+
 
 
 function App() {
   const navigate = useNavigate();
 
   return (
-    <div style ={{width: "50%", position: "absolute", top:"40px", bottom:"20px", height:"100%", margin:"auto auto", textAlign: "center", backgroundImage: `url(${background}`}}>
+    <div style ={{ width: "100vw", height: "100vh", textAlign: "center", margin: "auto auto", backgroundColor:"lightblue" }}>
     
       <h1> Login Page</h1>
-      <Form>
+      <Form
+      style={{width: "50%", textAlign: "center", margin: "auto auto"}}>
         <Form.Group>
           <Form.Control name ="Name" placeholder="Name" style = {{marginBottom: "1rem"}}/>
           <Form.Control name = "Email" placeholder = "Email" style = {{marginBottom: "1rem"}} />
-          <Form.Control name="Password" placeholder ="Password" style = {{marginBottom: "1rem"}}/> 
+          <Form.Control name="Password" placeholder ="Password" type="password" style = {{marginBottom: "1rem"}}/> 
         </Form.Group>
       </Form>
       <Button 
       variant = "outline-dark"
-      style={{width: "100%"}}
+      style={{width: "50%"}}
       onClick={() => navigate("create")}> Login</Button>
+      <Background />
+
+     
+      
     </div>
   );
 }

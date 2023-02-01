@@ -65,7 +65,7 @@ function Posts() {
     <div style={{ width: "50%", textAlign: "center", margin: "auto auto" }}>
       <h1>Material Creation page! </h1>
       <h2>
-        {" "}
+       
         <Shelf />
       </h2>
 
@@ -73,10 +73,7 @@ function Posts() {
         style={{ width: "100%", marginBottom: "1rem" }}
         variant="outline-dark"
         onClick={() => navigate(-1)}
-      >
-        {" "}
-        Back{" "}
-      </Button>
+      > Back </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -126,8 +123,8 @@ function Posts() {
               <div
                 key={post._id}
                 style={{
-                  border: "solid lightgray 1px",
-                  borderRadius: "8px",
+                //   border: "solid lightgray 1px",
+                //   borderRadius: "8px",
                   marginBottom: "1rem",
                   padding: "1 rem",
                 }}
@@ -155,7 +152,7 @@ function Posts() {
                     variant="outline-danger"
                     style={{ width: "100%" }}
                   >
-                    {" "}
+                   
                     Delete
                   </Button>
                 </div>

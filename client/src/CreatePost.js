@@ -15,8 +15,8 @@ function CreatePost() {
         description: ""
     });
 
-    const handleChange=(e) => {
-        const {name, value} = e.target;
+    const handleChange=(event) => {
+        const {name, value} = event.target;
         setPost((prev) => {
             return {
                 ...prev,
@@ -25,15 +25,16 @@ function CreatePost() {
         });
     };
 
+    
     const handleClick = (event) => {
         event.preventDefault();
 
         axios
         .post("/create", post)
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
 
-        navigate("posts")
+        navigate("posts");
     }
 
     return (
@@ -41,6 +42,7 @@ function CreatePost() {
         
             {/* IF YOUR STYLING IS WEIRD LOOK HERE -Not best practice*/}
             <h1>Create a new material below!</h1>
+            <br></br>
                 <Shelf />
             <Form>
                 <Form.Group>

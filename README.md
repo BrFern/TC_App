@@ -7,10 +7,13 @@ visualize their materials on the shelf. I thought this would ease the access
 for the Montesssori community. 
 
 Login page: 
-<img width="500" alt="Functionality" src = "">
+<img width="500" alt="Login" src = "https://github.com/BrFern/TC_App/blob/main/client/src/images/LoginPage.png">
 
 Materials page:
+<img width="500" alt="Materials page" src = "https://github.com/BrFern/TC_App/blob/main/client/src/images/MaterialsPage.png">
 
+Update material:
+<img width ="500" alt="Update page" src="https://github.com/BrFern/TC_App/blob/main/client/src/images/Update.png">
 
 
 # Author & Contributor List

@@ -13,7 +13,7 @@ import {BrowserRouter, Routes, Route } from "react-router-dom";
 // const mongoose = require("mongoose");
 // const app = express();
 
-
+const url = "https://teacher-app.onrender.com/create/posts"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const url = "https://teacher-app.onrender.com/create/posts"
+
 
 //Middleware
 // app.use(express.json());
